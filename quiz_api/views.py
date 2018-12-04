@@ -6,8 +6,8 @@ from .models import Quiz
 
 @api_view(['GET'])
 def quizes(request):
-    quizes = Quiz.objects.all()
-    serializer = QuizSerializer(quizes, many=True)
+    all_quizes = Quiz.objects.all()
+    serializer = QuizSerializer(all_quizes, many=True)
     return Response(serializer.data)
 
 
